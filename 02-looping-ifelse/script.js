@@ -2,6 +2,12 @@ for(let i = 0; i < 5; i++){
     console.log("hai" + i)
 }
 
+console.log("\n");
+const banyakNama = ["agung", "aru", "albi", "wisnu"];
+banyakNama.forEach(nama => {
+    console.log(nama)
+});
+
 const nama = "rehan";
 switch (nama) {
     case "agung":
