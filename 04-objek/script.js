@@ -33,6 +33,16 @@ function ConstructorMahasiswa (nama, power) {
     };
 };
 
+// class ConstructorMahasiswa {
+//     constructor(nama, power) {
+//         this.nama = nama;
+//         this.power = power;
+//         this.addPower = (energy) => {
+//             this.power += energy;
+//         };
+//     }
+// };
+
 const mahasiswa3 = new ConstructorMahasiswa("aru",150);
 
 // 4. objek create
