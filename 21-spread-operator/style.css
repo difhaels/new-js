@@ -1,0 +1,12 @@
+.nama {
+    font-size: 80px;
+    text-align: center;
+}
+h1.nama span {
+    display: inline-block;
+    transition: .3s;
+    cursor: pointer;
+}
+h1.nama span:hover{
+    transform: scale(2);
+}
