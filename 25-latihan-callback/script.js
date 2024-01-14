@@ -48,8 +48,8 @@ function showDetail(m) {
                     </div>
                     <div class="col-md">
                         <ul class="list-group">
-                            <li class="list-group-item"><h4>Judul</h4></li>
-                            <li class="list-group-item"><strong>Director : </strong>${m.Director}</li>
+                            <li class="list-group-item"><h4>${m.Title}</h4></li>
+                            <li class="list-group-item"><strong>Director : </strong>${m.Director}<li>
                             <li class="list-group-item"><strong>Actors : </strong>${m.Actors}</li>
                             <li class="list-group-item"><strong>Writer : </strong>${m.Writer}</li>
                             <li class="list-group-item"><strong>Plot :</strong><br>${m.Plot}</li>
