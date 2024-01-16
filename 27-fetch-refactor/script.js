@@ -19,7 +19,7 @@ function updateUI(movies) {
 
 // event binding untuk menampilkan detail
 document.addEventListener('click', async function(e){
-    if(e.target.classList.contains('.modal-detail-button')){
+    if(e.target.classList.contains('modal-detail-button')){
         const imdbid = e.target.dataset.imdbid;
         const movieDetail = await getDetail(imdbid)
         updateUIDetail(movieDetail);
