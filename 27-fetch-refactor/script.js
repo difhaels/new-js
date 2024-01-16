@@ -37,7 +37,7 @@ function getMovies(movies){
         return fetch('http://www.omdbapi.com/?apikey=276ca99&s=' + movies)
         .then(response => response.json())
         .then(response => response.Search)
-        .catch(e => console.log(e))
+        .catch(e => console.error(e.message))
 }
 
 // function untuk mengabil detail movie dari omdbapi
@@ -45,7 +45,7 @@ function getDetail(imdbid) {
     return fetch('http://www.omdbapi.com/?apikey=276ca99&i=' + imdbid)
     .then(response => response.json())
     .then(response => response)
-    .catch(e => console.log(e))
+    .catch(e => console.error(e.message))
 }
 
 // function untuk mampilkan movies yang didapatkan dari omdbapi 
