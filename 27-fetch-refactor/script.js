@@ -14,15 +14,22 @@ function updateUI(movies) {
     });
 
     const movieContainer = document.querySelector('.movie-container');
-    movieContainer.innerHTML = cards;
+    movieContainer.innerHTML = cards;  
+}
 
-    const detailBtn = document.querySelectorAll('.modal-detail-button');
-    detailBtn.forEach(btn => {
-        btn.addEventListener('click', function(){
-        const imdbid = this.dataset.imdbid;
-        getDetail(imdbid)
-        })
-    })  
+// event binding untuk menampilkan detail
+document.addEventListener('click', async function(e){
+    if(e.target.classList.contains('.modal-detail-button')){
+        const imdbid = e.target.dataset.imdbid;
+        const movieDetail = await getDetail(imdbid)
+        updateUIDetail(movieDetail);
+    }
+})
+
+// function untuk manmpilkan movie detail yang didapatkan dari omdbapi 
+function updateUIDetail (movie){
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = showDetail(movie)
 }
 
 // function untuk mengabil movies dari omdbapi
@@ -34,13 +41,10 @@ function getMovies(movies){
 }
 
 // function untuk mengabil detail movie dari omdbapi
-function getDetail(movie) {
-    return fetch('http://www.omdbapi.com/?apikey=276ca99&i=' + movie)
+function getDetail(imdbid) {
+    return fetch('http://www.omdbapi.com/?apikey=276ca99&i=' + imdbid)
     .then(response => response.json())
-    .then(response => {
-        const modalBody = document.querySelector('.modal-body');
-        modalBody.innerHTML = showDetail(response)
-    })
+    .then(response => response)
     .catch(e => console.log(e))
 }
 
